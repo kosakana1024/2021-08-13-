@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>とりのーとʚ( •௰• ໒꒱· ﾟ</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/reset.css">
+</head>
+<body>
+
+    <!-- ヘッダー画像 -->
+    <header class="cbs-header">
+        <img src="images/header/IMG_2115.JPG" alt="" class="header">
+    </header>
+
+    <!-- とりのーと -->
+    <main class="tori-note">
+        <div class="tori-setsu">
+            <div class="tori-setsu1">とりのーとʚ( •௰• ໒꒱· ﾟ</div>
+            <div class="tori-setsu2">”とりのーと”とは、ちゃっちゃばぁーどしゃんの日記である。</div>
+            <div class="tori-setsu3">我々普通の人間は、メモ代わりとして使用する事が出来る。</div>
+            <div class="tori-setsu4">いっぱいつかってくだしゃい((ε( ｰөｰ)໒꒱· ﾟ byちゃっちゃばぁーどしゃん</div>
+        </div>
+
+        <div class="tori-note1">
+            <img src="images/torinote/IMG_2116.JPG" alt="">
+            <textarea id="text_area"></textarea>
+            <ul>
+                <li id="save">(ﾉ)•ω•(ヾ)</li>
+                <li id="clear">(´⊙ ϖ ⊙｀)</li>
+            </ul>
+    </main>
+
+    <!-- <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+    // メモ一枚目
+
+    //1.Save クリックイベント
+    $('#save').on('click', function () {
+        const text = $('#text_area').val();
+        localStorage.setItem('memo', text);
+    });
+
+    //2.clear クリックイベント
+    $('#clear').on('click', function () {
+        localStorage.removeItem('memo');
+        $('#text_area').val('');
+    });
+
+    //3.ページ読み込み：保存データ取得表示
+    if (localStorage.getItem('memo')) {
+        const text = localStorage.getItem('memo');
+        $('#text_area').val(text);
+    }
+    
+
+    // メモ二枚目
+
+    //1.Save クリックイベント
+    $('#save').on('click', function () {
+        const text = $('#text_area').val();
+        localStorage.setItem('memo', text);
+    });
+
+    //2.clear クリックイベント
+    $('#clear').on('click', function () {
+        localStorage.removeItem('memo');
+        $('#text_area').val('');
+    });
+
+    //3.ページ読み込み：保存データ取得表示
+    if (localStorage.getItem('memo')) {
+        const text = localStorage.getItem('memo');
+        $('#text_area').val(text);
+    }
+
+    </script>
+</body>
+</html>
